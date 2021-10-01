@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-kob3hm*_g!26m@ij9_(#*--3h$)h#8ozzip^z9%!l38rrs4rl)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['caughprediction.herokuapp.com']
+ALLOWED_HOSTS = ['caughprediction.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -140,7 +140,7 @@ STATICFILES_DIRS = (
 )
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)

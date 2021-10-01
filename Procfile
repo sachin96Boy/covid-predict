@@ -1,1 +1,1 @@
-web: gunicorn sound_prediction.wsgi --log-file
+web: gunicorn sound.wsgi --log-file
