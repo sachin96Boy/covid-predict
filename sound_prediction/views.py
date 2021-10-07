@@ -6,6 +6,11 @@ from django.http import HttpResponse
 from os import path
 from pydub import AudioSegment
 
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
+
+
 def homepage(request):
     return render(request, 'homepage.html', {})
 
@@ -41,24 +46,38 @@ def login(request):
             health_status = MyLoginForm.cleaned_data['health_status']
     else:
         MyLoginForm = InputForm()
-    ext = URL[-4:]
-    if (ext !=".wav"):
-        # files
-        # AudioSegment.converter = 'Lib/site-packages/django_ffmpeg'
-        # wget.download(URL, 'sound_prediction/files/temp' + ext)
-        # src = 'sound_prediction/files/temp' + ext
-        # dst = 'sound_prediction/files/temp' + '.wav'
-        # sound = AudioSegment.from_mp3(src)
-        # sound.export(dst, format="wav")
-        pass
-    else:
-        #Save the downloaded audio
-        wget.download(URL, 'sound_prediction/files/temp'+ext)
+    # ext = URL[-4:]
+    # if (ext !=".wav"):
+    #     # files
+    #     # AudioSegment.converter = 'Lib/site-packages/django_ffmpeg'
+    #     # wget.download(URL, 'sound_prediction/files/temp' + ext)
+    #     # src = 'sound_prediction/files/temp' + ext
+    #     # dst = 'sound_prediction/files/temp' + '.wav'
+    #     # sound = AudioSegment.from_mp3(src)
+    #     # sound.export(dst, format="wav")
+    #     pass
+    # else:
+    #     #Save the downloaded audio
+    #     wget.download(URL, 'sound_prediction/files/temp'+ext)
 
-    #save the generated heatmap
-    file_name = 'sound_prediction/files/temp'+'.wav'
+    #download the mp3 for the analisis
+    wget.download(URL ,'Sound_prediction/files/temp.wav')
+    
+
+
+
+    # save the generated heatmap
+    #file_name = 'sound_prediction/files/temp'+'.wav'
+
+    # #customsavepath
+    file_name = 'sound_prediction/files/temp.wav'
+
+
     context['graph'] = graph_(file_name)
-    data_ = [['sound_prediction/files/temp', health_status, 'sound_prediction/files/temp'+'.wav',int(FEVER),int(OC),'Coswara']]
+    # data_ = [['sound_prediction/files/temp', health_status, 'sound_prediction/files/temp'+'.wav',int(FEVER),int(OC),'Coswara']]
+
+    #custompathtodataarray
+    data_ = [['sound_prediction/files/temp', health_status, file_name,int(FEVER),int(OC),'Coswara']]
 
     def feature_extractor(file_name_,row):
         name = row[0]
