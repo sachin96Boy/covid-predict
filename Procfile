@@ -1,3 +1,3 @@
-web: gunicorn sound_prediction.wsgi --log-file
+web: gunicorn sound.wsgi:application --log-file
 python manage.py collectstatic --noinput
 manage.py migrate
