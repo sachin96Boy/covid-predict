@@ -6,8 +6,8 @@ from django.http import HttpResponse
 from os import path
 from pydub import AudioSegment
 
-# import ssl
-# ssl._create_default_https_context = ssl._create_unverified_context
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 
