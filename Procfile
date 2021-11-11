@@ -1,4 +1,4 @@
 python: python manage.py runserver 0.0.0.0:$PORT
-web: gunicorn -b 0.0.0.0:$PORT sound.wsgi:application  --log-file 
+web: gunicorn sound.wsgi --log-file 
 
 
