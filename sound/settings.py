@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-kob3hm*_g!26m@ij9_(#*--3h$)h#8ozzip^z9%!l38rrs4rl)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['coughprediction.herokuapp.com', '127.0.0.1'.'*']
+ALLOWED_HOSTS = ['coughprediction.herokuapp.com', '127.0.0.1','*']
 
 
 # Application definition
