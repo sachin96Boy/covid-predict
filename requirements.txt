@@ -4,7 +4,7 @@ dj-database-url==0.5.0
 Django==3.2.7
 django-ffmpeg==0.1.4
 ffmpeg==1.4
-keras==2.6.0
+keras==2.4.3
 librosa==0.8.1
 matplotlib==3.4.3
 numpy==1.19.5
