@@ -5,6 +5,8 @@ Django==3.2.7
 django-ffmpeg==0.1.4
 ffmpeg==1.4
 ffmpeg-python==0.2.0
+keras==2.6.0
+librosa==0.8.1
 numpy==1.19.5
 tensorflow-cpu==2.6.0
 wget==3.2
