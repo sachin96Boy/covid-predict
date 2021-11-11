@@ -7,6 +7,6 @@ ffmpeg==1.4
 keras==2.6.0
 librosa==0.8.1
 numpy==1.19.5
-tensorflow-cpu==2.6.0
+tensorflow-cpu==1.14
 wget==3.2
 whitenoise==5.3.0
