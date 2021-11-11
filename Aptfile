@@ -1,1 +1,1 @@
-libsndfile1-dev libgl1 libsm6
+libsndfile1-dev libgl1 libsm6 libice6
