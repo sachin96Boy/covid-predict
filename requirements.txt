@@ -9,7 +9,7 @@ keras==2.3.0
 librosa==0.8.1
 matplotlib==3.4.3
 numpy==1.19.5
-opencv-python== 3.4.2.17
+opencv-python== 4.4.0.44
 psycopg2==2.9.1
 SoundFile==0.10.3.post1
 tensorflow-cpu==2.1.0
